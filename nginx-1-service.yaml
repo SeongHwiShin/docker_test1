@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2020-09-10T23:47:02Z"
+  finalizers:
+  - service.kubernetes.io/load-balancer-cleanup
+  labels:
+    app: nginx-1
+  name: nginx-1-service
+  namespace: default
+  resourceVersion: "2666"
+  selfLink: /api/v1/namespaces/default/services/nginx-1-service
+  uid: 14b4c02f-0366-4d2b-a3c0-1305e9898476
+spec:
+  clusterIP: 10.4.14.198
+  externalTrafficPolicy: Cluster
+  ports:
+  - nodePort: 30605
+    port: 5000
+    protocol: TCP
+    targetPort: 5000
+  selector:
+    app: nginx-1
+  sessionAffinity: None
+  type: LoadBalancer
+status:
+  loadBalancer:
+    ingress:
+    - ip: 35.184.115.131
