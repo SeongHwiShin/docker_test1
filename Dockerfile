@@ -2,5 +2,5 @@ FROM python
 COPY . /app
 WORKDIR /app
 RUN pip install flask
-EXPOSE 8080
+EXPOSE 5000
 CMD ["python", "untitled2.py"]
