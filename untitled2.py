@@ -8,6 +8,9 @@ app = Flask(__name__)
 def test():
 
     temp = request.args.get('input')
+    if temp == None:
+        return 'test'
+
     temp = int(temp)
     i = 2
     j = 0
@@ -21,8 +24,9 @@ def test():
             i += 1
 
     j = str(j)
+
     return j
 
 
 if __name__ == '__main__':
-    app.run(debug=True,host='0.0.0.0')
+    app.run()
